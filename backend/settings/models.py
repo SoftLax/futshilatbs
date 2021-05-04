@@ -9,3 +9,13 @@ class Client(models.Model):
 
     def __str__(self):
         return self.name
+
+class FiscalYear(models.Model):
+    name = models.CharField(max_length=20)
+    start_date = models.DateField(max_length=10)
+    end_date = models.DateField(max_length=10)
+    is_closed = models.BooleanField(default=False)
+    status = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name

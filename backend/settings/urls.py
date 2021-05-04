@@ -1,9 +1,12 @@
 from django.urls import path
-from .views import ClientList
+from .views import ClientList, FiscalYearList, FiscalYearCreate, FiscalYearUpdate, FiscalYearDelete
 
 app_name = 'settings'
 
 urlpatterns = [
-    path('', ClientList.as_view()),    
-    #path('<int:pk>/', PostDetail.as_view(), name='detailcreate'),
+    path('clients/', ClientList.as_view()),
+    path('fiscalyears', FiscalYearList.as_view()),
+    path('fiscalyears/create/', FiscalYearCreate.as_view()),
+    path('fiscalyears/update/<int:pk>/', FiscalYearUpdate.as_view()),
+    path('fiscalyears/delete/<int:pk>/', FiscalYearDelete.as_view()),
 ]
